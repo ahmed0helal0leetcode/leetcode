@@ -5,7 +5,7 @@ class Solution {
      * @return Integer
      */
     function romanToInt($s) {
-        $lookup= [
+        $lookupForOneDigit= [
             "I"=>1,
            "V"=>5,
             "X"=>10,
@@ -14,7 +14,7 @@ class Solution {
             "D"=>500,
             "M"=>1000,
         ];
-        $lookupTwo=[
+        $lookupForTwoDigits=[
             "CM"=>900,
             "XC"=>90,
             "IV"=>4,
@@ -26,11 +26,11 @@ class Solution {
         $sum=0;
 
         for($i=0;$i<=strlen($s);$i++){
-            if($lookupTwo[$s[$i].$s[$i+1]]){
-                $sum+=$lookupTwo[$s[$i].$s[$i+1]];
+            if($lookupForTwoDigits[$s[$i].$s[$i+1]]){
+                $sum+=$lookupForTwoDigits[$s[$i].$s[$i+1]];
                 $i=$i+1;
             }else{
-                 $sum+=$lookup[$s[$i]];
+                 $sum+=$lookupForOneDigit[$s[$i]];
             }
         }
         

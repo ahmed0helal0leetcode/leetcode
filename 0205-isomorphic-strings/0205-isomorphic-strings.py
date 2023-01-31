@@ -2,7 +2,6 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         ds,dt={},{}
         
-        d={}
         for i in range(len(s)):
             
             if (s[i] in ds and ds[s[i]]!=t[i]) or (t[i] in dt and dt[t[i]] !=s[i]):

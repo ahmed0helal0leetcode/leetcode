@@ -12,7 +12,6 @@ class Solution:
         r=len(s)-1
         
         while l<r:
-            
             while l<r and not self.alph(s[l]):
                 l+=1
             while r>l and not self.alph(s[r]):

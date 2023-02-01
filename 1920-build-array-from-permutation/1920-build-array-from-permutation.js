@@ -5,11 +5,17 @@
 var buildArray = function(nums) {
 
     const output = [];
+    const count = nums.length;
+    let index = nums.length;
 
-    for (let i = 0; i < nums.length; i++) {
-        output.push(nums[nums[i]]);
+    for (let i = 0; i < count; i++) {
+        nums[index + i] = nums[nums[i]];
     }
 
-    return output;
+    for (let i = 0; i < count; i++) {
+        nums.shift();
+    }
+
+    return nums;
 
 };

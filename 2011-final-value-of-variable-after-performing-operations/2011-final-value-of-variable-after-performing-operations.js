@@ -4,10 +4,10 @@
  */
 var finalValueAfterOperations = function(operations) {
     X = 0;
-    
-    for (operation of operations) {
-        eval(operation);
-    }
-
+    operations.reduce(
+        (accumulator, currentValue) => accumulator + eval(currentValue),
+        X
+    )
     return X;
+
 };

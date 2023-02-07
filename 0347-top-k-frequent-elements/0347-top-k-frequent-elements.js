@@ -14,9 +14,10 @@ var topKFrequent = function(nums, k) {
     let keys = Object.keys(hashMapValueAndHowMuchItRepated);
 
     keys.sort((a, b) => {
-        return  hashMapValueAndHowMuchItRepated[b] - hashMapValueAndHowMuchItRepated[a]
+        return hashMapValueAndHowMuchItRepated[a] - hashMapValueAndHowMuchItRepated[b]
     });
 
+    keys.reverse();
     const result = [];
     for (let i = 0; i < k; i++) {
         result.push(keys[i]);

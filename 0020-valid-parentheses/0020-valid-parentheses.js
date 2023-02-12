@@ -11,11 +11,10 @@ const isValid = function (s) {
   const searchForClosing = [];
   for (const bracket of s) {
     if (searchForClosing.includes(bracket)) {
-      const index = searchForClosing.lastIndexOf(bracket);
-      if (index !== searchForClosing.length - 1) {
+      const lastElement = searchForClosing.pop();
+      if (lastElement !== bracket) {
         return false;
       }
-      searchForClosing.splice(index, 1);
     } else {
       searchForClosing.push(BRACKET_MAPPING[bracket]);
     }

@@ -15,5 +15,4 @@ const moveZeroes = function (nums) {
   for (let i = 0; i < count; i++) {
     nums.push(0);
   }
-  return nums;
 };

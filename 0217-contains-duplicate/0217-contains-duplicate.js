@@ -3,11 +3,11 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    const lookup = {}
+    const lookup = {};
     for (let num of nums) {
 
         if (lookup[num] && lookup[num]) {
-            return true
+            return true;
         } else {
             lookup[num] = true;
         }
